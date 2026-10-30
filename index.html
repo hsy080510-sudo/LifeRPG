@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life RPG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <header>
+            <h1>LIFE RPG</h1>
+            <p>YOUR LIFE. YOUR RULES.</p >
+        </header>
+
+        <section class="player-card">
+            <div class="player-info">
+                <div>
+                    <p class="label">PLAYER LEVEL</p >
+                    <h2 id="level">LV. 1</h2>
+                </div>
+
+                <div class="xp-number">
+                    <p class="label">EXPERIENCE</p >
+                    <h2 id="xp">0 / 100 XP</h2>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress" class="progress"></div>
+            </div>
+
+            <p id="status">Your adventure starts here.</p >
+        </section>
+
+        <section class="quest-section">
+            <h2>DAILY QUESTS</h2>
+
+            <div class="quest">
+                <div>
+                    <h3>Study Java</h3>
+                    <p>Complete your programming lesson.</p >
+                </div>
+                <button onclick="completeQuest('java', 20)">
+                    +20 XP
+                </button>
+            </div>
+
+            <div class="quest">
+                <div>
+                    <h3>Learn English</h3>
+                    <p>Practice English for 30 minutes.</p >
+                </div>
+                <button onclick="completeQuest('english', 20)">
+                    +20 XP
+                </button>
+            </div>
+
+            <div class="quest">
+                <div>
+                    <h3>Work Out</h3>
+                    <p>Complete your workout.</p >
+                </div>
+                <button onclick="completeQuest('workout', 30)">
+                    +30 XP
+                </button>
+            </div>
+        </section>
+
+        <section class="achievement-section">
+            <h2>ACHIEVEMENTS</h2>
+            <p id="achievement">🔒 First Quest — Not unlocked</p >
+        </section>
+
+        <button class="reset-button" onclick="resetGame()">
+            RESET GAME
+        </button>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

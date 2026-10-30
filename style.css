@@ -1,0 +1,173 @@
+
+/* 1. Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Main Background */
+body {
+    background: #10111a;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 40px 20px;
+}
+
+/* 3. Main Container */
+.container {
+    max-width: 750px;
+    margin: auto;
+}
+
+/* 4. Header */
+header {
+    margin-bottom: 35px;
+}
+
+header h1 {
+    color: #a78bfa;
+    font-size: 38px;
+    letter-spacing: 4px;
+}
+
+header p {
+    color: #888;
+    margin-top: 8px;
+    letter-spacing: 2px;
+}
+
+/* 5. Player Card */
+.player-card {
+    background: #1c1b2b;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 35px;
+    border: 1px solid #38334d;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.label {
+    color: #999;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.player-info h2 {
+    color: #a78bfa;
+    font-size: 25px;
+}
+
+.xp-number {
+    text-align: right;
+}
+
+/* 6. Progress Bar */
+.progress-bar {
+    background: #38334d;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    background: #a78bfa;
+    width: 0%;
+    height: 100%;
+    transition: width 0.4s;
+}
+
+#status {
+    color: #aaa;
+    margin-top: 15px;
+    font-size: 13px;
+}
+
+/* 7. Daily Quests */
+.quest-section {
+    margin-bottom: 35px;
+}
+
+.quest-section > h2,
+.achievement-section h2 {
+    margin-bottom: 18px;
+    color: #c4b5fd;
+    letter-spacing: 2px;
+}
+
+.quest {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1c1b2b;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    gap: 15px;
+}
+
+.quest h3 {
+    margin-bottom: 7px;
+}
+
+.quest p {
+    color: #999;
+    font-size: 13px;
+}
+
+button {
+    background: #8b5cf6;
+    color: white;
+    border: none;
+    padding: 11px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #a78bfa;
+}
+
+button:disabled {
+    background: #454052;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/* 8. Achievements */
+.achievement-section {
+    background: #1c1b2b;
+    padding: 22px;
+    border-radius: 12px;
+}
+
+.achievement-section p {
+    color: #aaa;
+}
+
+/* 9. Reset Button */
+.reset-button {
+    margin-top: 25px;
+    background: #393443;
+}
+
+/* 10. Mobile Layout */
+@media (max-width: 500px) {
+    body {
+        padding: 25px 15px;
+    }
+
+    .quest {
+        align-items: flex-start;
+    }
+
+    .quest p {
+        max-width: 180px;
+    }
+}
