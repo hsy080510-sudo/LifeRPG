@@ -1,4 +1,15 @@
+/* Supabase Configuration */
 
+const SUPABASE_URL = "https://yquxksabyrawjirzagra.supabase.co";
+
+const SUPABASE_KEY = "sb_publishable_e-IHxulK9fZiB3FoRKTrKQ_xuUzsldB";
+
+const supabaseClient = supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+);
+
+console.log("Supabase connected!");
 /* Life RPG - Game System */
 
 // Load saved game data
@@ -90,3 +101,53 @@ function resetGame() {
 
 // Start game
 updateGame();
+// User Authentication
+
+async function registerUser() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const status = document.getElementById("auth-status");
+
+    const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        status.textContent = error.message;
+        return;
+    }
+
+    status.textContent = "Registration successful! Check your email.";
+}
+
+async function loginUser() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const status = document.getElementById("auth-status");
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password
+    });
+
+    if (error) {
+        status.textContent = error.message;
+        return;
+    }
+
+    status.textContent = "Login successful!";
+
+    console.log("Logged in user:", data.user.id);
+}
+
+async function logoutUser() {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+        document.getElementById("auth-status").textContent = error.message;
+        return;
+    }
+
+    document.getElementById("auth-status").textContent = "Logged out.";
+}
